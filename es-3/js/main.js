@@ -1,34 +1,21 @@
 /**
  * 
-    A - Scrivi una funzione che accetti una stringa come argomento e la ritorni girata (es. Ciao -> oaiC)
-    B - Scrivi una funzione che accetti un numero come argomento e ritorni il suo opposto (inverso additivo) es (34 -> -34)
-    C - Data una lista di 10 numeri e 10 stringhe, restituisci una copia della lista con tutte le stringhe girate e i numeri opposti.
-    * 
+ * 
+    Scrivi una funzione che fonda due array (aventi lo stesso numero di elementi) prendendo alternativamente gli elementi da uno e dall'altro
+    es. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+
+ * 
  */
 
-function reverseString(str){
-    return str.split("").reverse().join("");
-};
+const firstArray = [1,2,3,4,5,6,7,8,9,10];
+const secondArray =['a','b','c','d','e','f','g','h','i','j'];
 
-console.log(reverseString('Ciao'));
 
-function reverseNumber(num){
-    return -num;
+const newArray = [];
+
+for(let i = 0; i < firstArray.length ; i++){
+    newArray.push(firstArray[i]);
+    newArray.push(secondArray[i]);
 }
 
-console.log(reverseNumber(5));
-
-const myArray = [5, 6, 1, 2, 3, 4 , 7 , 8 , 9 , 10 , 'ciao' , 'hello' , 'boolean' , 'classe' , 'matteo' , 'snack' , 'javascript' , 'cane' , 'fame' , 'pranzo'];
-
-myArray.forEach((element) => {
-    if(isNaN(element)){
-        console.log(reverseString(element));
-    }else{
-        console.log(reverseNumber(element));
-    }
-});
-
-
-const newArray = myArray.map((element) => (isNaN(parseInt(element))) ? reverseString(element) : reverseNumber(element));
-
-console.table(newArray);
+console.log(newArray);
