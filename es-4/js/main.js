@@ -7,7 +7,7 @@
     * La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra il primo numero e il secondo numero
 */
 
-const myArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+const myArray = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 
 let firstNum = Math.floor(Math.random() * (myArray.length - 1));
 
@@ -25,4 +25,16 @@ function randomArray (array, num1, num2){
     return newArray;
 }
 
+function reverseRandomArray (array, num1, num2){
+    const newArray = [];
+    for(let i = 0; i < num2; i++ ){
+        newArray.push(array[i]);
+    }
+    for(let x = num1; x < array.length; x++){
+        newArray.push(array[x]);
+    }
+    return newArray;
+}
+
 console.table(randomArray(myArray, firstNum, secondNum));
+console.table(reverseRandomArray(myArray, firstNum, secondNum));
