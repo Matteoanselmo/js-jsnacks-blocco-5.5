@@ -19,3 +19,15 @@ for(let i = 0; i < firstArray.length ; i++){
 }
 
 console.log(newArray);
+
+
+function arrayCoupler (firstArray, secondArray){
+    const minimumLenght = Math.min(firstArray.length , secondArray.length);
+    const coupledArray = [];
+    for(let i = 0; i < minimumLenght; i++){
+        coupledArray.push(firstArray[i], secondArray[i]);
+    }
+    return coupledArray;
+}
+
+console.table(arrayCoupler(firstArray, secondArray));
